@@ -6,6 +6,7 @@ const HomeScreen = ({navigation}) => {
     <Text style={styles.text}>Getting Started with React Native!</Text>
     <Button onPress={() => { navigation.navigate('Component') }} title="Go to Components" />
     <Button onPress={() => { navigation.navigate('List') }} title="Go to List" />
+    <Button onPress={() => { navigation.navigate('Image') }} title="Go to ImageScreen" />
   </View>
 
 };
