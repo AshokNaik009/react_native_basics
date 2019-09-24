@@ -1,14 +1,18 @@
 import React from 'react';
-import {Text,StyleSheet,View} from 'react-native';
-import { setRecoveryProps } from 'expo/build/ErrorRecovery/ErrorRecovery';
+import { Text, StyleSheet, View, Image } from 'react-native';
 
 
-const ImageDetails = (props) => {
-    return  <Text>{props.title}</Text>
+
+const ImageDetails = ({ imageSource, title, imageScore }) => {
+    return <View>
+        <Image source={imageSource} />
+        <Text>{title}</Text>
+        <Text>{imageScore}</Text>
+    </View>
 }
 
 const styles = StyleSheet.create({
-    
+
 })
 
 export default ImageDetails;
