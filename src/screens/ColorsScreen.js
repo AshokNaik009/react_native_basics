@@ -5,12 +5,13 @@ import { FlatList } from 'react-native-gesture-handler';
 
 const ColorScreen = () => {
     //Inializing State Varaible and State Method
-    const [colors, setColors] = [];
+    const [colors, setColors] = useState([]);
     return <View>
         {/*  Using ... to create a replica of the array  */}
         <Button title="Add Color" onPress={() => { setColors([...colors, RandomRgb()]) }} />
         {/*  {{}} braces used because we are changing the Style Dynamically */}
-
+        {/*  Flat-List has Three Properties keyExtractor(Use to Identify eachelement uniquely) data takes
+         an array  renderitem  is a method return JSX with the values of array  */}
         <FlatList
             keyExtractor={item => item}
             data={colors}
