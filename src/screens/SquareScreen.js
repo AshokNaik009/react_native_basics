@@ -11,11 +11,33 @@ const SquareScreen = () => {
     const [blue, setBlue] = useState(0);
     
 
+    //Creating a helper Function
+    const setColor = (color,change) => {
+        //Color Paramter wil be the color we want to Change
+        //Change will be +15 or -15
+
+        switch(color) {
+         case 'red':
+             red + change > 255 || red + change < 0 ? null : setRed(red+change)
+             return
+         case 'green':
+             green + change > 255 || green + change < 0 ? null : setGreen(green+change)
+             return
+         case 'blue':
+             blue + change > 255 || blue + change < 0 ? null : setBlue(blue+change)
+             return
+
+         default:
+             return
+         
+        }
+    }
+
     return (
         <View>
-            <ColorCounter increaseColor={() => setRed(red + COLORINCREMENT)} decreaseColor={() => setRed(red - COLORINCREMENT)} color="Red" />
-            <ColorCounter increaseColor={() => setGreen(green + COLORINCREMENT)} decreaseColor={() => setGreen(green - COLORINCREMENT)} color="Green" />
-            <ColorCounter increaseColor={() => setBlue(blue + COLORINCREMENT)} decreaseColor={() => setBlue(blue - COLORINCREMENT)} color="Blue" />
+            <ColorCounter increaseColor={() => setColor('red' , COLORINCREMENT)} decreaseColor={() => setColor('red'  , -1 * COLORINCREMENT)} color="Red" />
+            <ColorCounter increaseColor={() => setColor('green' , COLORINCREMENT)} decreaseColor={() => setColor('green' ,  -1 * COLORINCREMENT)} color="Green" />
+            <ColorCounter increaseColor={() => setColor('blue' , COLORINCREMENT)} decreaseColor={() => setColor('blue' , -1 * COLORINCREMENT)} color="Blue" />
 
             <View
                 style={{
